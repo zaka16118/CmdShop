@@ -59,6 +59,9 @@ public class ReadExcel {
                 break;
             case NUMERIC:
                 value = cell.getNumericCellValue() + "";
+                int index=value.lastIndexOf(".");
+                value=value.substring(0,index);
+                System.out.println("处理后的: "+value);
                 break;
             case FORMULA:
                 value = cell.getCellFormula();
