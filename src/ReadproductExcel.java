@@ -8,12 +8,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 public class ReadproductExcel {
-    /*
-    readExcel是什么方法？成员方法
-     */
-    public User[] readExcel(InputStream in) {
+
+
+    public Product[] readExcel(InputStream in) {
         Product products[]= null;
         try {
             XSSFWorkbook xw = new XSSFWorkbook(in);
@@ -21,7 +19,7 @@ public class ReadproductExcel {
             products = new Product[xs.getLastRowNum()];
             for (int j = 1; j <= xs.getLastRowNum(); j++) {
                 XSSFRow row = xs.getRow(j);
-                Product products=new Product();
+                Product product=new Product();
                 for (int k = 0; k <= row.getLastCellNum(); k++) {
                     XSSFCell cell = row.getCell(k);
                     if (cell == null)
@@ -41,7 +39,7 @@ public class ReadproductExcel {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return users;
+        return products;
     }
 
     private String getValue(XSSFCell cell) {

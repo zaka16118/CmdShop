@@ -2,6 +2,7 @@ public class Product {
     private String id;
     private String name;
     private Float price;
+    private String desc;
 
     public String getId() {
         return id;
@@ -34,6 +35,4 @@ public class Product {
     public void setDesc(String desc) {
         this.desc = desc;
     }
-
-    private String desc;
 }

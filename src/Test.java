@@ -19,7 +19,7 @@ public class Test {
             //File file=new File("D:\\IdeaU\\IntelliJ IDEA 2019.2.4\\CmdShop\\src\\users.xlsx");
 
             InputStream in = Class.forName("Test").getResourceAsStream("/users.xlsx");
-            ReadusersExcel readExcel = new ReadusersExcel();//创建对象
+            ReadUserExcel readExcel = new ReadUserExcel();//创建对象
             User users[] = readExcel.readExcel(in);
             System.out.println("从excel中读到的用户名: " + users[0].getUsername());
             System.out.println("从excel中读到的密码: " + users[0].getPassword());
